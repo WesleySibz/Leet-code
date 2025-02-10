@@ -1,0 +1,61 @@
+To add two binary strings and return their sum as a binary string, 
+you can use a straightforward approach that involves iterating through the strings from right to left, 
+adding corresponding bits, and keeping track of the carry. Here's the implementation in Python:
+
+Steps
+Initialize Pointers and Variables: Use pointers to iterate through the strings from right to left. 
+Initialize a variable to keep track of the carry and a list to store the result.
+
+Iterate Through the Strings: Iterate through the strings from right to left, adding corresponding bits and the carry.
+
+Handle Carry: If there is a carry left after the iteration, add it to the result.
+
+Return the Result: Join the list of result bits into a string and return it.
+
+
+Explanation
+Initialize Pointers and Variables:
+i and j are pointers initialized to the last indices of strings a and b, respectively.
+
+carry is initialized to 0.
+
+result is an empty list to store the result bits.
+
+Iterate Through the Strings:
+The while loop continues as long as there are bits to process in either string or there is a carry.
+
+total is initialized to the value of carry.
+
+If i is within bounds, add the bit from a at index i to total and decrement i.
+
+If j is within bounds, add the bit from b at index j to total and decrement j.
+
+
+Handle Carry:
+Calculate the new carry as total // 2.
+
+Append the current bit (total % 2) to the result list.
+
+Return the Result:
+After the loop, the result list contains the bits of the sum in reverse order.
+
+Use ''.join(result[::-1]) to join the bits into a string in the correct order and return it.
+
+
+Example Usage
+Example 1:
+Input: a = "11", b = "1"
+
+Output: "100"
+
+Explanation: The binary sum of 11 and 1 is 100.
+
+Example 2:
+Input: a = "1010", b = "1011"
+
+Output: "10101"
+
+Explanation: The binary sum of 1010 and 1011 is 10101.
+
+This approach ensures that the binary strings are added correctly, 
+handling carries and different lengths of input strings efficiently.
