@@ -1,0 +1,62 @@
+To solve this problem, 
+you need to perform a left join between the Person table and the Address table. 
+A left join will include all records from the Person table and the matching 
+records from the Address table. If there is no match, 
+the result will contain NULL for the columns from the Address table.
+
+Explanation
+SELECT Clause:
+Select the firstName and lastName columns from the Person table.
+
+Select the city and state columns from the Address table.
+
+FROM Clause:
+Specify the Person table with an alias p.
+
+LEFT JOIN Clause:
+Perform a left join with the Address table with an alias a.
+
+Join the tables on the personId column, which is common to both tables.
+
+ON Clause:
+Specify the condition for the join: p.personId = a.personId.
+
+Example Usage
+Given the example tables:
+
++----------+----------+-----------+
+| personId | lastName | firstName |
++----------+----------+-----------+
+| 1        | Wang     | Allen     |
+| 2        | Alice    | Bob       |
++----------+----------+-----------+
+
+Address Table:
+
++-----------+----------+---------------+------------+
+| addressId | personId | city          | state      |
++-----------+----------+---------------+------------+
+| 1         | 2        | New York City | New York   |
+| 2         | 3        | Leetcode      | California |
++-----------+----------+---------------+------------+
+
+Output:
+
++-----------+----------+---------------+----------+
+| firstName | lastName | city          | state    |
++-----------+----------+---------------+----------+
+| Allen     | Wang     | Null          | Null     |
+| Bob       | Alice    | New York City | New York |
++-----------+----------+---------------+----------+
+
+Explanation of the Output
+For personId = 1 (Allen Wang), there is no matching personId in the Address table, 
+so the city and state columns are NULL.
+
+For personId = 2 (Bob Alice), there is a matching personId in the Address table, 
+so the city and state columns are populated with
+"New York City" and "New York", respectively.
+
+This query ensures that all persons from the Person table are included in the result, 
+with NULL values for city and state if there is no corresponding address 
+in the Address table.

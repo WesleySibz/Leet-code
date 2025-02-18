@@ -1,0 +1,61 @@
+To solve the problem of finding the number of distinct ways to climb to the top of a staircase where you can 
+take either 1 or 2 steps at a time, 
+you can use dynamic programming. This problem is similar to the Fibonacci sequence.
+
+Steps
+Base Cases:
+
+If n is 1, there is only 1 way to climb the staircase (1 step).
+
+If n is 2, there are 2 ways to climb the staircase (1+1 steps or 2 steps).
+
+Dynamic Programming Approach:
+
+Use an array dp where dp[i] represents the number of ways to reach the i-th step.
+
+Initialize dp[1] to 1 and dp[2] to 2.
+
+For each step from 3 to n, calculate dp[i] as the sum of dp[i-1] and dp[i-2] because you can 
+reach the i-th step either from the (i-1)-th step or the (i-2)-th step.
+
+
+Explanation
+Base Cases:
+If n is 1, return 1 because there is only one way to climb 1 step.
+
+If n is 2, return 2 because there are two ways to climb 2 steps (1+1 or 2).
+
+Dynamic Programming Array:
+Initialize an array dp of size n+1 with all elements set to 0.
+
+Set dp[1] to 1 and dp[2] to 2.
+
+Fill the DP Array:
+Iterate from 3 to n.
+
+For each i, set dp[i] to the sum of dp[i-1] and dp[i-2].
+
+Return the Result:
+Return dp[n], which contains the number of ways to reach the n-th step.
+
+
+Example Usage
+Example 1:
+Input: n = 2
+
+Output: 2
+
+Explanation: There are two ways to climb to the top: (1 step + 1 step) or (2 steps).
+
+Example 2:
+Input: n = 3
+
+Output: 3
+
+Explanation: There are three ways to climb to the top: (1 step + 1 step + 1 step), (1 step + 2 steps), or (2 steps + 1 step).
+
+Constraints
+1 <= n <= 45
+
+This approach ensures that the number of distinct ways to climb to the top is found efficiently using dynamic programming, 
+achieving a time complexity of O(n).

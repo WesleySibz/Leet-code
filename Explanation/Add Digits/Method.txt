@@ -1,0 +1,40 @@
+To solve the problem of repeatedly adding all the digits of an integer num until the result 
+has only one digit, you can use a mathematical approach known as the digital root. 
+This approach allows you to solve the problem in O(1) runtime without using any loops or 
+recursion.
+
+Method Explanation
+The digital root of a number is the single-digit value obtained by an iterative process of 
+summing digits, on each iteration using the result from the previous iteration to compute 
+the sum of digits. The process continues until a single-digit number is obtained.
+
+For a given non-negative integer num, the digital root can be found using the following 
+formula:
+
+If num == 0, the digital root is 0.
+If num % 9 == 0, the digital root is 9.
+Otherwise, the digital root is num % 9.
+
+Explanation
+Check if num is Zero: If num is 0, return 0 because the digital root of 0 is 0.
+
+Check if num is Divisible by 9: If num % 9 == 0, return 9 because the digital root of a 
+number divisible by 9 is 9.
+
+Calculate Digital Root: Otherwise, return num % 9 as the digital root.
+
+Example Usage
+For num = 38, the output is 2 because:
+38 --> 3 + 8 --> 11
+11 --> 1 + 1 --> 2
+For num = 0, the output is 0.
+
+Constraints
+0 <= num <= 2^31 - 1
+
+Follow-up
+The solution achieves O(1) runtime by using the digital root formula, 
+which avoids any loops or recursion.
+
+This approach ensures that the problem is solved efficiently with constant time complexity 
+and minimal space complexity.

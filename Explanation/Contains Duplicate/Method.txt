@@ -1,0 +1,14 @@
+To determine if any value appears at least twice in an integer array nums, 
+you can implement the following algorithm in Python:
+
+This code works as follows:
+
+Initialize an empty set seen to keep track of the elements that have been encountered.
+
+Iterate through each element num in the array nums.
+
+If num is already in the seen set, return True because a duplicate has been found.
+
+If num is not in the seen set, add it to the set.
+
+If the loop completes without finding any duplicates, return False.

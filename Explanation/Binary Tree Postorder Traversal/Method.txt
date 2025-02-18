@@ -1,0 +1,87 @@
+To perform a postorder traversal of a binary tree, you can use both recursive and iterative approaches. 
+In postorder traversal, you visit the left subtree first, then the right subtree, and finally the root node.
+
+Recursive Approach
+The recursive approach is straightforward and involves calling the function recursively for the left and right subtrees, 
+and then visiting the root node.
+
+Implementation (Recursive)
+
+
+Iterative Approach
+The iterative approach uses a stack to simulate the recursive call stack. 
+This approach is useful when you want to avoid the overhead of recursive function calls.
+
+Implementation (Iterative)
+
+
+Explanation
+TreeNode Class:
+Defines a node in the binary tree with a value (val), a pointer to the left child (left), and a pointer to the right child (right).
+
+Recursive Approach:
+The postorderTraversal method defines a helper function postorder that takes a node as an argument.
+
+If the node is None, return an empty list.
+
+Recursively call postorder on the left subtree and the right subtree, 
+and concatenate the results with the current node's value at the end.
+
+Iterative Approach:
+The postorderTraversal method initializes a stack with the root node and an empty list output to store the traversal result.
+
+Use a while loop to process nodes from the stack:
+Pop a node from the stack.
+
+If the node is not None, append its value to output.
+
+Push the left child and then the right child of the node onto the stack (so that the right child is processed first).
+
+Reverse the output list to get the correct postorder traversal.
+
+Example Usage:
+Constructs binary trees for the given examples.
+
+Creates an instance of the Solution class.
+
+Calls the postorderTraversal method with the root of the binary tree.
+
+Prints the result, which is the postorder traversal of the tree.
+
+
+Example Usage
+Example 1:
+Input: root = [1, null, 2, 3]
+
+Output: [3, 2, 1]
+
+Explanation: The postorder traversal visits nodes in the order: left subtree, right subtree, root.
+
+Example 2:
+Input: root = [1, 2, 3, 4, 5, null, 8, null, null, 6, 7, 9]
+
+Output: [4, 6, 7, 5, 2, 9, 8, 3, 1]
+
+Explanation: The postorder traversal visits nodes in the order: left subtree, right subtree, root.
+
+Example 3:
+Input: root = []
+
+Output: []
+
+Explanation: The tree is empty, so the result is an empty list.
+
+Example 4:
+Input: root = [1]
+
+Output: [1]
+
+Explanation: The tree has only one node, so the result is a list with that single node.
+
+Constraints
+The number of nodes in the tree is in the range [0, 100].
+
+-100 <= Node.val <= 100
+
+The iterative approach ensures that the postorder traversal is performed without using recursion, 
+making it suitable for environments with limited stack space.
