@@ -1,0 +1,12 @@
+To count the number of nodes in a complete binary tree in less than O(n) time complexity, 
+you can use a combination of binary search and tree traversal. Here is an efficient algorithm in Python:
+
+Explanation
+Get Depth: The get_depth function calculates the depth of the leftmost path of the tree. This gives the depth of the tree.
+
+Check Node Existence: The exists function checks if a node exists at a given index in the last level of the tree using binary search.
+
+Binary Search on Last Level: The main function performs a binary search on the last level of the tree to count the number of nodes. 
+The total number of nodes is the sum of the nodes in the complete levels and the nodes found in the last level.
+
+Return Result: The function returns the total number of nodes in the tree.

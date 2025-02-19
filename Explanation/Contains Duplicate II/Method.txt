@@ -1,0 +1,16 @@
+To solve the problem of finding if there are two distinct indices i and j in the array such that 
+nums[i] == nums[j] and abs(i - j) <= k, you can implement the following algorithm in Python:
+
+Explanation
+Dictionary for Indices: Use a dictionary index_map to keep track of the last seen index of each element in the array.
+
+Iterate Through Array: Iterate through the array using enumerate to get both the index i and the value num at each position.
+
+Check for Nearby Duplicate:
+
+If num is already in index_map and the difference between the current index i and the last seen index of num 
+(stored in index_map[num]) is less than or equal to k, return True.
+
+Update the last seen index of num in index_map to the current index i.
+
+Return Result: If the loop completes without finding any nearby duplicates, return False.
