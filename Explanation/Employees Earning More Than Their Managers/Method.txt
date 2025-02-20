@@ -1,0 +1,51 @@
+To find the employees who earn more than their managers, 
+you can use a self-join on the Employee table. 
+The idea is to join the table with itself based on the managerId and id columns, 
+and then filter the results to find employees whose salary is greater than their 
+manager's salary.
+
+Explanation
+SELECT Clause:
+Select the name column from the first instance of the Employee table (e1) 
+and alias it as Employee.
+
+FROM Clause:
+Specify the Employee table with an alias e1.
+
+JOIN Clause:
+Perform a self-join with another instance of the Employee table (e2).
+Join the tables on the condition that the managerId of e1 matches the id of e2.
+
+WHERE Clause:
+Filter the results to include only those rows where the salary of e1 is 
+greater than the salary of e2.
+
+Example Usage
+Given the example table:
+
+Employee Table:
++----+-------+--------+-----------+
+| id | name  | salary | managerId |
++----+-------+--------+-----------+
+| 1  | Joe   | 70000  | 3         |
+| 2  | Henry | 80000  | 4         |
+| 3  | Sam   | 60000  | Null      |
+| 4  | Max   | 90000  | Null      |
++----+-------+--------+-----------+
+
+Output:
+
++----------+
+| Employee |
++----------+
+| Joe      |
++----------+
+
+Explanation of the Output
+Joe (id = 1) has a manager with id = 3 (Sam).
+Joe's salary (70000) is greater than Sam's salary (60000).
+Therefore, Joe is included in the result.
+Summary
+This query efficiently finds employees who earn more than their managers 
+by using a self-join on the Employee table and filtering based on the salary comparison. 
+The result is returned in any order, as specified in the problem statement.

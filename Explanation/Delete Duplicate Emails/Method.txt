@@ -1,0 +1,35 @@
+To solve this problem using SQL, 
+you can write a DELETE statement that removes duplicate emails while keeping the one with the smallest id. 
+Here is an example of how you can achieve this:
+
+DELETE p1
+FROM Person p1
+JOIN Person p2
+ON p1.email = p2.email AND p1.id > p2.id;
+
+This query works as follows:
+
+It joins the Person table with itself (p1 and p2 are aliases for the same table).
+The join condition p1.email = p2.email AND p1.id > p2.id ensures that for each duplicate email, 
+only the row with the larger id is selected for deletion.
+The DELETE p1 statement deletes the rows from the Person table that meet the join condition.
+
+For Pandas users, you can achieve the same result by modifying the DataFrame in place. Here is an example:
+
+import pandas as pd
+
+# Assuming 'Person' is your DataFrame
+# Example DataFrame
+data = {'id': [1, 2, 3], 'email': ['john@example.com', 'bob@example.com', 'john@example.com']}
+Person = pd.DataFrame(data)
+
+# Drop duplicates, keeping the first occurrence
+Person.drop_duplicates(subset='email', keep='first', inplace=True)
+
+# The DataFrame 'Person' is now modified in place
+print(Person)
+
+This code works as follows:
+
+The drop_duplicates method is used to remove duplicate emails, keeping only the first occurrence (which has the smallest id).
+The inplace=True parameter ensures that the DataFrame is modified in place.

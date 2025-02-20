@@ -1,0 +1,53 @@
+To find all the duplicate emails in the Person table, 
+you can use the GROUP BY clause along with the HAVING clause in SQL. 
+The GROUP BY clause groups the rows by the email column, 
+and the HAVING clause filters the groups to include only those with a count greater than 1.
+
+Explanation
+SELECT Clause:
+Select the email column and alias it as Email.
+
+FROM Clause:
+Specify the Person table.
+
+GROUP BY Clause:
+Group the rows by the email column.
+
+HAVING Clause:
+Filter the groups to include only those with a count greater than 1, 
+indicating duplicate emails.
+
+
+Example Usage
+Given the example table:
+
+Person Table:
+
++----+---------+
+| id | email   |
++----+---------+
+| 1  | a@b.com |
+| 2  | c@d.com |
+| 3  | a@b.com |
++----+---------+
+
+Output:
+
++---------+
+| Email   |
++---------+
+| a@b.com |
++---------+
+
+Explanation of the Output
+The email a@b.com appears twice in the Person table.
+
+The query groups the rows by the email column and filters to include only those groups 
+with a count greater than 1.
+
+Therefore, a@b.com is included in the result.
+
+Summary
+This query efficiently finds all duplicate emails in the Person table by using the GROUP BY 
+and HAVING clauses. The result is returned in any order, 
+as specified in the problem statement.

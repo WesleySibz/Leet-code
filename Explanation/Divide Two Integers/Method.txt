@@ -1,0 +1,54 @@
+To divide two integers without using multiplication, division, and mod operator, you can use bit manipulation and subtraction. 
+
+Explanation
+Constants for 32-bit Signed Integer Range: Define constants for the maximum and minimum values of a 32-bit signed integer.
+
+Edge Cases:
+If dividend is MIN_INT and divisor is -1, return MAX_INT to avoid overflow.
+
+If divisor is 0, raise a ValueError since division by zero is not allowed.
+
+
+Determine the Sign: Determine the sign of the result based on the signs of dividend and divisor.
+
+Work with Positive Values: Convert both dividend and divisor to their absolute values to simplify the calculation.
+
+Initialize the Quotient: Initialize the quotient to 0.
+
+
+Subtract Divisor from Dividend:
+Use a loop to subtract the divisor from the dividend until the dividend is less than the divisor.
+
+Use bit manipulation to efficiently subtract multiples of the divisor.
+
+Apply the Sign: Apply the determined sign to the quotient.
+
+Ensure the Quotient is Within Range: Ensure the quotient is within the 32-bit signed integer range.
+
+
+Example Usage
+
+Example 1:
+
+Input: dividend = 10, divisor = 3
+
+Output: 3
+
+Explanation: 10 / 3 = 3.33333.. which is truncated to 3.
+
+Example 2:
+
+Input: dividend = 7, divisor = -3
+
+Output: -2
+
+Explanation: 7 / -3 = -2.33333.. which is truncated to -2.
+This approach ensures that the division is performed without using multiplication, division, and mod operators, 
+and the result is truncated toward zero.
+
+Truncated Division
+
+Truncated division is a type of division where the fractional part of the result is discarded, 
+and only the integer part is kept. This means that the result is rounded towards zero. 
+
+For example, 8.345 would be truncated to 8, and -2.7335 would be truncated to -2.
