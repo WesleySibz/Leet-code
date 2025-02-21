@@ -1,0 +1,75 @@
+To convert a given integer columnNumber to its corresponding column title as it appears in an Excel sheet, 
+you can use a method similar to converting a number to a different base. 
+In this case, the base is 26, and the characters used are 'A' to 'Z'.
+
+Steps
+Initialize an Empty String:
+
+This string will store the resulting column title.
+
+Convert the Number:
+
+While columnNumber is greater than 0:
+Subtract 1 from columnNumber to handle the 1-based indexing.
+
+Find the remainder when columnNumber is divided by 26. This remainder corresponds to a character in the range 'A' to 'Z'.
+
+Convert the remainder to the corresponding character and prepend it to the result string.
+
+Update columnNumber by performing integer division by 26.
+
+Return the Result:
+
+Return the resulting column title string.
+
+
+Explanation
+Initialize an Empty String:
+
+Use a list result to store the characters of the column title.
+Convert the Number:
+
+While columnNumber is greater than 0:
+Subtract 1 from columnNumber to handle the 1-based indexing.
+
+Find the remainder when columnNumber is divided by 26. This remainder corresponds to a character in the range 'A' to 'Z'.
+
+Convert the remainder to the corresponding character using chr(remainder + ord('A')) and append it to the result list.
+
+Update columnNumber by performing integer division by 26.
+
+Return the Result:
+Reverse the result list and join the characters to form the final column title string.
+
+
+Example Usage
+Example 1:
+
+Input: columnNumber = 1
+
+Output: "A"
+
+Explanation: The column number 1 corresponds to the column title "A".
+
+Example 2:
+
+Input: columnNumber = 28
+
+Output: "AB"
+
+Explanation: The column number 28 corresponds to the column title "AB".
+
+Example 3:
+
+Input: columnNumber = 701
+
+Output: "ZY"
+
+Explanation: The column number 701 corresponds to the column title "ZY".
+
+Constraints
+1 <= columnNumber <= 2^31 - 1
+
+This approach ensures that the column number is converted to the corresponding column title efficiently, 
+using a method similar to base conversion. The time complexity is O(log26(columnNumber)), 
+which is efficient for the given constraints.

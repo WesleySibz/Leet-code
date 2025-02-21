@@ -1,0 +1,65 @@
+To convert a given Excel column title to its corresponding column number, 
+you can use a method similar to converting a string representation of a 
+number in a different base. In this case, the base is 26, 
+and the characters used are 'A' to 'Z'.
+
+Steps
+Initialize a Result Variable:
+This variable will store the resulting column number.
+
+Iterate Through the String:
+For each character in the string:
+Convert the character to its corresponding value (e.g., 'A' -> 1, 'B' -> 2, ..., 'Z' -> 26).
+
+Update the result by multiplying the current result by 26 (to shift the previous digits) 
+and adding the value of the current character.
+
+Return the Result:
+Return the resulting column number.
+
+Explanation
+Initialize a Result Variable:
+result is initialized to 0 to store the resulting column number.
+
+Iterate Through the String:
+For each character char in the string columnTitle:
+Convert the character to its corresponding value using ord(char) - ord('A') + 1. 
+For example, 'A' -> 1, 'B' -> 2, ..., 'Z' -> 26.
+
+Update the result by multiplying the current result by 26 (to shift the previous digits) 
+and adding the value of the current character.
+
+Return the Result:
+After iterating through all the characters, 
+return the resulting column number.
+
+Example Usage
+Example 1:
+Input: columnTitle = "A"
+
+Output: 1
+
+Explanation: The column title "A" corresponds to the column number 1.
+
+Example 2:
+Input: columnTitle = "AB"
+
+Output: 28
+
+Explanation: The column title "AB" corresponds to the column number 28.
+
+Example 3:
+Input: columnTitle = "ZY"
+
+Output: 701
+
+Explanation: The column title "ZY" corresponds to the column number 701.
+
+Constraints
+1 <= columnTitle.length <= 7
+columnTitle consists only of uppercase English letters.
+columnTitle is in the range ["A", "FXSHRXW"].
+This approach ensures that the column title is converted to the corresponding column number 
+efficiently, using a method similar to base conversion. 
+The time complexity is O(n), where n is the length of the column title, 
+which is efficient for the given constraints.

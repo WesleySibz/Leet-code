@@ -1,0 +1,63 @@
+To find the starting and ending position of a given target value in a sorted array with O(log n) runtime complexity, 
+you can use a modified binary search algorithm.
+
+Steps
+Binary Search for Left Bound: Use binary search to find the leftmost (first) occurrence of the target.
+
+Binary Search for Right Bound: Use binary search to find the rightmost (last) occurrence of the target.
+
+Explanation
+Binary Search for Left Bound:
+
+Use binary search to find the leftmost (first) occurrence of the target.
+
+If nums[mid] is less than the target, move the left pointer to mid + 1.
+
+Otherwise, move the right pointer to mid - 1.
+
+The loop ends when left is greater than right, and left will be the index of the first occurrence of the target.
+
+
+Binary Search for Right Bound:
+Use binary search to find the rightmost (last) occurrence of the target.
+
+If nums[mid] is less than or equal to the target, move the left pointer to mid + 1.
+
+Otherwise, move the right pointer to mid - 1.
+
+The loop ends when left is greater than right, and right will be the index of the last occurrence of the target.
+
+Check Validity:
+
+After finding the left and right bounds, check if the target exists within the bounds.
+
+If left_index is less than or equal to right_index and left_index is within the array bounds and nums[left_index] is equal to the target, 
+return [left_index, right_index].
+
+Otherwise, return [-1, -1].
+
+
+Example Usage
+Example 1:
+Input: nums = [5, 7, 7, 8, 8, 10], target = 8
+
+Output: [3, 4]
+
+Explanation: The target value 8 is found at indices 3 and 4.
+
+Example 2:
+Input: nums = [5, 7, 7, 8, 8, 10], target = 6
+
+Output: [-1, -1]
+
+Explanation: The target value 6 is not found in the array.
+
+Example 3:
+Input: nums = [], target = 0
+
+Output: [-1, -1]
+
+Explanation: The array is empty, so the target value 0 is not found.
+
+This approach ensures that the starting and ending positions of the target value are found efficiently using binary search, 
+achieving the required O(log n) runtime complexity.

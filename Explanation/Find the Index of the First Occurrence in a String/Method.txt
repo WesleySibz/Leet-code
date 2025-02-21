@@ -1,0 +1,41 @@
+To find the index of the first occurrence of the substring needle in the string haystack, 
+you can use a simple sliding window approach.
+
+Explanation
+Class Definition: The Solution class is defined to encapsulate the strStr method.
+
+strStr Method: This method finds the index of the first occurrence of needle in haystack.
+
+Lengths: Get the lengths of haystack and needle.
+
+Edge Case: If needle is empty, return 0.
+
+Sliding Window: Iterate through haystack with a sliding window of length equal to needle.
+
+Substring Check: For each position, check if the substring of haystack matches needle.
+
+Return Index: If a match is found, return the starting index.
+
+Return -1: If needle is not found in haystack, return -1.
+
+
+Example Usage
+
+Example 1:
+
+Input: haystack = "sadbutsad", needle = "sad"
+
+Output: 0
+
+Explanation: "sad" occurs at index 0 and 6. The first occurrence is at index 0, so we return 0.
+
+Example 2:
+
+Input: haystack = "leetcode", needle = "leeto"
+
+Output: -1
+
+Explanation: "leeto" did not occur in "leetcode", so we return -1.
+
+This approach ensures that the index of the first occurrence of needle in haystack is 
+found efficiently using a sliding window technique.
